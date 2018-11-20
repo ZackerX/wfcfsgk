@@ -1,0 +1,35 @@
+@import "/util/lifecycle.acss";
+@import '/util/grid/index.acss';
+@import '/util/items/index.acss';
+
+.slogon {
+  text-align: center;
+}
+
+.logo {
+  margin-top: 60rpx;
+  width: 90px;
+  height: 90px;
+}
+
+.info {
+  margin-top: 30rpx;
+  margin-bottom: 60rpx;
+}
+
+.desc {
+  font-size: 28rpx;
+  color: #888;
+}
+
+.grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 395px;
+}
+.grid-text {
+    color: #FFF;
+    font-size: 42rpx;
+    line-height: 1;
+}

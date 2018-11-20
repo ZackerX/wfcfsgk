@@ -1,0 +1,18 @@
+<import src="/util/lifecycle.axml"/>
+<import src="/util/grid/index.axml"/>
+<import src="/util/items/index.axml"/>
+
+<view class="container" key="container">
+  <view class="slogon">
+    <image src="/image/logo.png" mode="scaleToFill" class="logo"/>
+    <view class="info">
+      <text class="desc">选择需管控阀室的所属站队
+      </text>
+    </view>
+  </view>
+  <template is="grid" data="{{...arr}}"/>
+</view>
+
+<template is="items" key="items" data="{{hidden: hidden, list: arr.list[curIndex], onChildItemTap: arr.onChildItemTap, animMaskData, animContentData}}" />
+
+<template key="lifecycle" is="lifecycle" a:if="{{debug}}" />
