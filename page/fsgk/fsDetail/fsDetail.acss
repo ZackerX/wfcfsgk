@@ -23,3 +23,9 @@
   height: 32rpx;
   margin-left: 16rpx;
 }
+
+.row-info {
+  font-size: 22rpx;
+  color: #888;
+  margin-left: 0rpx;
+}

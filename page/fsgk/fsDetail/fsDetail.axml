@@ -62,16 +62,20 @@
     <view class="form-row">
       <view class="form-row-label">应急电话      
       </view>
-      <view class="form-row-content">        
+      <view class="form-row-content" onLongTap="showEmergencyCall">        
         15968498652      
+      </view>
+      <view class="row-info">长按拨号
       </view>
     </view>
   </view>
   <view class="page-section">
     <view class="page-section-demo">
-      <button type="primary">调取监控视频
+      <button type="primary" onTap="showMonitorVideo">调取监控视频
       </button>
-      <button type="primary" onTap="showActionSheet">查看历史记录   
+      <button type="primary" onTap="showHistroyDetail">查看历史记录   
+      </button>
+      <button type="primary" onTap="doWatchClock">巡更打卡   
       </button>
     </view>
   </view>
