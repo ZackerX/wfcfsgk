@@ -97,7 +97,8 @@
     "page/biz/pages/list/index",
     "page/biz/pages/tag/index",
     "page/fsgk/home/home",
-    "page/fsgk/fsDetail/fsDetail"
+    "page/fsgk/fsDetail/fsDetail",
+    "page/fsgk/monitorVideo/monitorVideo"
   ],
   "window": {
     "enableWK": "YES",

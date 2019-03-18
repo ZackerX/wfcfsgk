@@ -1,5 +1,12 @@
+//let url = "https://oapi.dingtalk.com/topapi/ding/task/create?access_token=ACCESS_TOKEN";
+let url = "http://wfcfsgk.vaiwan.com/dingding-app/monitor/detailView/info/";
 Page({
   data: {
+    monitor_datetime:0,
+    temperature:0,
+    humidity:0,
+    LEL_monitor_data:0,
+    H2S_monitor_data:0,
     objectArray: [
       {
         id: 0,
@@ -17,6 +24,40 @@ Page({
     arrIndex: 0,
     index: 0
   },
+  onLoad(query){
+
+        let _this = this;
+        
+        dd.httpRequest({
+            url: url,
+            method: 'POST',
+            data: {
+                dept_id: query.dept_id,
+                valve_room_id: query.valve_room_id,
+            },
+            dataType: 'json',
+            success: (res) => {
+                //dd.alert({content: "step2"});
+                console.log('success----',res)
+                this.setData({
+                    monitor_datetime:res.data.result.monitor_datetime,
+                    temperature:res.data.result.temperature,
+                    humidity:res.data.result.humidity,
+                    LEL_monitor_data:res.data.result.LEL_monitor_data,
+                    H2S_monitor_data:res.data.result.H2S_monitor_data,
+                })
+            },
+            fail: (res) => {
+                console.log("httpRequestFail---",res)
+                dd.alert({content: JSON.stringify(res)});
+            },
+            complete: (res) => {
+                dd.hideLoading();
+            }
+            
+        });
+
+    },
   bindObjPickerChange(e) {
     console.log('picker发送选择改变，携带值为', e.detail.value);
     this.setData({
@@ -24,17 +65,9 @@ Page({
     });
   },
   showMonitorVideo() {
-    dd.chooseVideo({
-      sourceType: ['camera'],
-      maxDuration: 60,
-      success:(res)=> {
-        console.log(res.apFilePath)
-      },
-      fail: (err)=> {
-        console.log(err)
-      }
-    })
-    
+    dd.navigateTo({
+      url: `/page/fsgk/monitorVideo/monitorVideo`,
+    });
   },
   showHistroyDetail() {
     dd.showActionSheet({
@@ -64,11 +97,30 @@ Page({
     });
   },
   doWatchClock(e) {
-    dd.vibrate({
-      success: (res) => {
-        console.log(e.data);
-        dd.alert({ title: '打卡时间 2018/11/16 09:00:00'});
-      }
-    });
+    dd.httpRequest({
+            //url: "http://wfcfsgk.vaiwan.com/dingding-app/monitor/detailView/info/",
+            url: "http://wfcfsgk.vaiwan.com/dingding-app/monitor/alarm",
+            method: 'POST',
+            dataType: 'json',
+            success: (res) => {
+                //dd.alert({content: "step2"});
+                console.log('success----',res)
+                dd.vibrate({
+                      success: (res) => {
+                        console.log(e.data);
+                        dd.alert({ title: '打卡成功 2018/11/16 09:00:00'});
+                      }
+                    });
+            },
+            fail: (res) => {
+                console.log("httpRequestFail---",res)
+                dd.alert({content: JSON.stringify(res)});
+            },
+            complete: (res) => {
+                dd.hideLoading();
+            }
+            
+        });
+    
   },
 });

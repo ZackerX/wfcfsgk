@@ -12,9 +12,9 @@
   </view>
   <view class="page-section">
     <view class="form-row">
-      <view class="form-row-label">监测时间      
+      <view class="form-row-label">监测时间
       </view>
-      <view class="form-row-content">2018/11/16 08:00:00      
+      <view class="form-row-content">{{monitor_datetime}}     
       </view>
     </view>
   </view>
@@ -23,7 +23,7 @@
       <view class="form-row-label">室内温度
       </view>
       <view class="form-row-content">
-        15.0℃
+        {{temperature}}℃
       </view>
     </view>
     <view class="form-line" />
@@ -31,7 +31,7 @@
       <view class="form-row-label">室内湿度
       </view>
       <view class="form-row-content">
-        70%
+        {{humidity}}%
       </view>
     </view>
     <view class="form-line" />
@@ -39,7 +39,7 @@
       <view class="form-row-label">可燃气体浓度
       </view>
       <view class="form-row-content">
-        0.00％LEL
+        {{LEL_monitor_data}}％LEL
       </view>
     </view>
     <view class="form-line" />
@@ -47,7 +47,7 @@
       <view class="form-row-label">硫化氢浓度
       </view>
       <view class="form-row-content">
-        0.05ppm
+        {{H2S_monitor_data}}ppm
       </view>
     </view>
   </view>
