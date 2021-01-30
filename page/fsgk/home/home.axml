@@ -9,6 +9,7 @@
       <text class="desc">选择需管控阀室的所属站队
       </text>
     </view>
+    
   </view>
   <template is="grid" data="{{...arr}}"/>
 </view>

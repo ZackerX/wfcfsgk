@@ -26,7 +26,8 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 395px;
+    width: 380px;
+    justify-content: center;
 }
 .grid-text {
     color: #FFF;

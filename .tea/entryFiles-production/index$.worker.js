@@ -3,6 +3,7 @@ require('./config$');
 require('./importScripts$');
 function success() {
 require('../..//app');
+require('../../page/fsgk/home/home');
 require('../../page/component/index');
 require('../../page/component/action-sheet/action-sheet');
 require('../../page/component/button/button');
@@ -98,5 +99,7 @@ require('../../page/biz/pages/error-view/index');
 require('../../page/biz/pages/grid/index');
 require('../../page/biz/pages/list/index');
 require('../../page/biz/pages/tag/index');
+require('../../page/fsgk/home/home');
+require('../../page/fsgk/fsDetail/fsDetail');
 }
 self.bootstrapApp ? self.bootstrapApp({ success }) : success();

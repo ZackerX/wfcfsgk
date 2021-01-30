@@ -220,7 +220,7 @@ Page({
     console.log(`${ page }`);
     console.log(`${page}/${page}`);
     dd.navigateTo({
-      url: `/page/fsgk/fsDetail/fsDetail`,
+      url: `/page/fsgk/fsDetail/fsDetail?dept_id=1&valve_room_id=1`,
     });
   },
   onChildItemTap(e) {

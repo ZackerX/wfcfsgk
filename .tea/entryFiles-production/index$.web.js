@@ -1,5 +1,6 @@
 require('@alipay/appx-compiler/lib/sjsEnvInit');
 require('./config$');
+require('../../page/fsgk/home/home');
 require('../../page/component/index');
 require('../../page/component/action-sheet/action-sheet');
 require('../../page/component/button/button');
@@ -95,3 +96,5 @@ require('../../page/biz/pages/error-view/index');
 require('../../page/biz/pages/grid/index');
 require('../../page/biz/pages/list/index');
 require('../../page/biz/pages/tag/index');
+require('../../page/fsgk/home/home');
+require('../../page/fsgk/fsDetail/fsDetail');
